@@ -1,16 +1,18 @@
 /*
-=============================================================
-Create Database and Schemas
-=============================================================
-Script Purpose:
-    This script creates a new database named 'DataWarehouse' after checking if it already exists. 
-    If the database exists, it is dropped and recreated. Additionally, the script sets up three schemas 
-    within the database: 'bronze', 'silver', and 'gold'.
-	
-WARNING:
-    Running this script will drop the entire 'DataWarehouse' database if it exists. 
-    All data in the database will be permanently deleted. Proceed with caution 
-    and ensure you have proper backups before running this script.
+* Data Warehouse Initialization & Schema Definition
+* Script Type: DDL (Data Definition Language) - Infrastructure Setup
+*
+* Function: Establishes the core database and the three-layer Medallion Architecture schemas.
+* Action: Drops and recreates the 'DataWarehouse' database if it already exists, ensuring a
+* clean starting point for development or deployment.
+*
+* Defined Schemas:
+* 1. bronze: The raw, immutable data ingestion layer.
+* 2. silver: The cleansed, standardized, and normalized data layer.
+* 3. gold: The business-ready, highly-modeled (Star Schema) data layer for analytics.
+*
+* WARNING: Execution will result in the **PERMANENT LOSS** of all existing data
+* within the 'DataWarehouse' database.
 */
 
 USE master;
