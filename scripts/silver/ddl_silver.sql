@@ -1,4 +1,13 @@
-
+/*
+* Data Warehouse Layer: SILVER
+* Script Type: DDL (Data Definition Language)
+*
+* Function: Defines the DDL structure for the Silver Layer.
+* Action: Creates tables in the 'silver' schema.
+* Note: Existing tables will be dropped ('IF EXISTS') before creation.
+*
+* Run this script to (re)define the structure of 'silver' tables.
+*/
 
 IF OBJECT_ID('silver.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE silver.crm_cust_info;
